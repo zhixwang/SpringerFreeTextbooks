@@ -7,6 +7,8 @@ Background: because of the COVID-19, [Springer Nature frees around 500 interdisc
 
 Click ["Free English textbook titles (all disciplines)"](https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v4) on the [page](https://www.springernature.com/gp/librarians/news-events/all-news-articles/industry-news-initiatives/free-access-to-textbooks-for-institutions-affected-by-coronaviru/17855960?utm_source=springer&utm_medium=referral&utm_content=null&utm_campaign=SRCN_1_NX01_CN_CNJS_BEPL_textbook) and copy the Excel file to the repository folder.
 
+**Attention**: rename the book title of No. 347 (*Systems Programming in Unix/Linux*) by replacing the character "/" as space or "_" before running the script, to avoid an error when saving this book.
+
 ## Step 2: install wget
 
 > pip install wget
