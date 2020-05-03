@@ -15,7 +15,7 @@ books_info = pd.read_excel("Free+English+textbooks.xlsx")
 
 start_id = 347
 
-for book_id in range(start_id, len(books_info)):
+for book_id in range(start_id, len(books_info))[:1]:
     # Select a book
     book = books_info.iloc[book_id]
     # Get book pdf file link
@@ -27,12 +27,12 @@ for book_id in range(start_id, len(books_info)):
     
     # Saving info
     book_name = book["Book Title"] + r"_[" + book["Author"] + r"].pdf"          # BookTitle_[BookAuthor].pdf
-    
+    book_name = re.sub('[\/:*?"<>|]', '-', book_name)
     # Download
     book_category = book[r"English Package Name"]
     if not os.path.exists(book_category):
         os.makedirs(book_category)
     print("No. " + str(book_id) +"- Start downloading: " + book["Book Title"] )
-    download_file = wget.download(book_pdf_link, out= book_category + r"/" + book_name)
+    download_file = wget.download(book_pdf_link, out = os.path.join(book_category, book_name))
     # os.system(f'cd {book_category} && curl -O -J -L {book_pdf_link}')
-    print(download_file + " Downloaded!")
+    print('\n'+download_file + " Downloaded!")
