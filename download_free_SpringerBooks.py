@@ -13,9 +13,9 @@ import os
     
 books_info = pd.read_excel("Free+English+textbooks.xlsx")
 
-start_id = 347
+start_id = 0
 
-for book_id in range(start_id, len(books_info))[:1]:
+for book_id in range(start_id, len(books_info)):
     # Select a book
     book = books_info.iloc[book_id]
     # Get book pdf file link
